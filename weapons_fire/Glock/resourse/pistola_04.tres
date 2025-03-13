@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="weapon_type" load_steps=3 format=3 uid="uid://j2oevaanpbvf"]
+
+[ext_resource type="Script" uid="uid://sfsjq0r7spwn" path="res://weapons_fire/weapon_class.gd" id="1_1tegt"]
+[ext_resource type="Texture2D" uid="uid://dgw811kgi0uvc" path="res://weapons_fire/Glock/glock_icon.png" id="1_w74v2"]
+
+[resource]
+script = ExtResource("1_1tegt")
+name = "Glock"
+damage = 135.0
+atack_rate = 0.24
+bullet_speed = 1000.0
+bullet_capacity = 60
+reload_speed = 1.0
+piercing = true
+icon = ExtResource("1_w74v2")
+text = "La poronguda"

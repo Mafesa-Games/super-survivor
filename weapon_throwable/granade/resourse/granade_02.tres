@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="weapon_granade_type" load_steps=3 format=3 uid="uid://crt4jstonhyog"]
+
+[ext_resource type="Texture2D" uid="uid://dqwafkbjk7dob" path="res://weapon_throwable/granade/granade_icon.png" id="1_wcjnf"]
+[ext_resource type="Script" uid="uid://b8k0brv0f8c6y" path="res://weapon_throwable/granade/granade_weapon_class.gd" id="2_soewj"]
+
+[resource]
+script = ExtResource("2_soewj")
+name = "Granade"
+damage = 80.0
+atack_rate = 2.8
+atack_area = 50.0
+throwable_speed = 200.0
+throwable_capacity = 1
+reload_speed = 10.0
+icon = ExtResource("1_wcjnf")
+text = "pum pam"
+metadata/_custom_type_script = "uid://b8k0brv0f8c6y"

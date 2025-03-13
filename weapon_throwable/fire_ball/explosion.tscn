@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0jdd4g3wqf7k"]
+
+[ext_resource type="Script" uid="uid://k55rwbco02a3" path="res://weapon_throwable/fire_ball/explosion.gd" id="1_2twaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_346kr"]
+radius = 25.0
+
+[sub_resource type="Gradient" id="Gradient_jesh5"]
+offsets = PackedFloat32Array(0.289855, 0.731884)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_60pi0"]
+gradient = SubResource("Gradient_jesh5")
+
+[sub_resource type="Curve" id="Curve_j7eab"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.615385), -0.0536519, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pw5ps"]
+curve = SubResource("Curve_j7eab")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_27n2m"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+scale_curve = SubResource("CurveTexture_pw5ps")
+color_ramp = SubResource("GradientTexture1D_60pi0")
+
+[node name="explotion" type="Area2D"]
+collision_layer = 0
+collision_mask = 65280
+script = ExtResource("1_2twaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_346kr")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0.539063, 0, 1)
+amount_ratio = 0.7778
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_27n2m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

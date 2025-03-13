@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfki44pn3nnpv"]
+
+[ext_resource type="Script" uid="uid://db2kvef2iqk58" path="res://weapons_fire/Glock/weapon_fire_flash.gd" id="1_5f7y5"]
+[ext_resource type="Texture2D" uid="uid://d1ewi0p5htans" path="res://weapons_fire/Glock/weapon_fire_1.png" id="2_m4d8s"]
+[ext_resource type="Texture2D" uid="uid://bw3x4u8qhcfks" path="res://weapons_fire/Glock/weapon_fire_2.png" id="4_bfnf0"]
+[ext_resource type="Texture2D" uid="uid://0ogixuoor6gm" path="res://weapons_fire/Glock/weapon_fire_3.png" id="5_0jryd"]
+
+[sub_resource type="Animation" id="Animation_47ktn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yrgy1"]
+resource_name = "fire_flash_1"
+length = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y5rp5"]
+resource_name = "fire_flash_2"
+length = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_npg3u"]
+resource_name = "fire_flash_3"
+length = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_en3qr"]
+_data = {
+&"RESET": SubResource("Animation_47ktn"),
+&"fire_flash_1": SubResource("Animation_yrgy1"),
+&"fire_flash_2": SubResource("Animation_y5rp5"),
+&"fire_flash_3": SubResource("Animation_npg3u")
+}
+
+[node name="weapon_fire_flash" type="Sprite2D"]
+script = ExtResource("1_5f7y5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.846802, 0.0195313, 1)
+z_index = 2
+texture = ExtResource("2_m4d8s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 0.632813, 0, 1)
+z_index = 2
+texture = ExtResource("4_bfnf0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(1, 0.483276, 0.0273438, 1)
+z_index = 2
+texture = ExtResource("5_0jryd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_en3qr")
+}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="weapon_type" load_steps=3 format=3 uid="uid://bbfce2rk1vg4w"]
+
+[ext_resource type="Texture2D" uid="uid://cjira44pjf7kq" path="res://assets/sprites/exp-a-02.png" id="1_4mmrw"]
+[ext_resource type="Script" uid="uid://sfsjq0r7spwn" path="res://weapons_fire/weapon_class.gd" id="2_eur5v"]
+
+[resource]
+script = ExtResource("2_eur5v")
+name = "green"
+damage = 5.0
+atack_rate = 0.8
+bullet_speed = 200.0
+bullet_capacity = 30
+reload_speed = 2.0
+piercing = false
+icon = ExtResource("1_4mmrw")
+text = "La poronguda"

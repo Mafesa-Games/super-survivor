@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1tvic22eivvk"]
+
+[ext_resource type="Script" uid="uid://bxu2ih05ljyt7" path="res://composition/scripts/enemy_weapon.gd" id="1_lun44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_144l0"]
+radius = 195.003
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_lun44")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="SearchEnemy" type="Area2D" parent="."]
+position = Vector2(-1, -6)
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchEnemy"]
+shape = SubResource("CircleShape2D_144l0")
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="SearchEnemy" to="." method="_on_search_enemy_body_entered"]
+[connection signal="body_exited" from="SearchEnemy" to="." method="_on_search_enemy_body_exited"]

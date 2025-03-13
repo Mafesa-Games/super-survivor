@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://divgr0y8gci84"]
+
+[ext_resource type="Script" uid="uid://cgu8ci5viia1a" path="res://weapons_fire/sword/rebounce_sword_slash.gd" id="1_20mv3"]
+[ext_resource type="Texture2D" uid="uid://bn0wr47yhk1c0" path="res://weapons_fire/sword/sword-slash1.png" id="2_vrpwc"]
+[ext_resource type="Texture2D" uid="uid://dnsvo3ll1cpoo" path="res://weapons_fire/sword/sword-slash2.png" id="3_giqwd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8al4"]
+radius = 0.999975
+height = 9.99997
+
+[node name="rebounce_sword_effect" type="Area2D"]
+script = ExtResource("1_20mv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.00242913
+shape = SubResource("CapsuleShape2D_u8al4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -5.96046e-08)
+scale = Vector2(0.25, 0.390625)
+texture = ExtResource("2_vrpwc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_giqwd")

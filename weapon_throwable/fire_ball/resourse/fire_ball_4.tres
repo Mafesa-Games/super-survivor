@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="weapon_global_class" load_steps=3 format=3 uid="uid://c6ta2xs47yefb"]
+
+[ext_resource type="Texture2D" uid="uid://rvveodhx05mm" path="res://weapon_throwable/fire_ball/fire_ball_icon.png" id="1_a22fu"]
+[ext_resource type="Script" uid="uid://cn30wqtng8p8l" path="res://weapon_throwable/fire_ball/fire_ball_class.gd" id="2_xa0o8"]
+
+[resource]
+script = ExtResource("2_xa0o8")
+name = "Fire Ball"
+description = ""
+level = 5
+max_level = 5
+damage = 390.0
+charger_capacity = 1
+attack_rate = 1.8
+critical_chance = 5.0
+critical_damage = 10.0
+projectile_speed = 190.0
+projectile_lifetime = 3.2
+projectile_range = 450.0
+projectile_spread = 3.0
+projectile_number = 6.0
+makes_piercing = false
+piercing_times = 0
+makes_bounce = false
+bounce_times = 0
+makes_explosion = true
+explosion_damage = 65.0
+explosion_times = 1
+explosion_area = 40.0
+icon = ExtResource("1_a22fu")

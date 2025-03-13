@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="item_class" load_steps=3 format=3 uid="uid://c56jr22oyiil8"]
+
+[ext_resource type="Texture2D" uid="uid://cknojyuvfbh1v" path="res://assets/boots-a-00.png" id="1_auars"]
+[ext_resource type="Script" uid="uid://dfnhfg4iqpj1v" path="res://items/item_class.gd" id="2_1htxj"]
+
+[resource]
+script = ExtResource("2_1htxj")
+name = "iron boots"
+quality = 0
+type = 2
+hp = 4
+speed = 4.0
+defense = 4.0
+life_steal = 4.0
+attack_speed = 4.0
+critical_chance = 4.0
+critical_damage = 4.0
+dodge_chance = 4.0
+hp_regeneration = 4.0
+explosion_damage = 4.0
+explosion_size = 4.0
+pickup_range = 4.0
+elemental_fire_damage = 4.0
+elemental_thunder_damage = 4.0
+elemental_water_damage = 4.0
+elemental_rock_damage = 4.0
+elemental_fire_defense = 4.0
+elemental_thunder_defense = 4.0
+elemental_water_defense = 4.0
+elemental_rock_defense = 4.0
+icon = ExtResource("1_auars")

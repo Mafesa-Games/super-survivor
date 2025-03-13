@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="spell_class" load_steps=3 format=3 uid="uid://8sntutaejpkk"]
+
+[ext_resource type="Script" uid="uid://d0dto81yhrghc" path="res://spells/spell_class.gd" id="1_5xbql"]
+[ext_resource type="Texture2D" uid="uid://cjira44pjf7kq" path="res://assets/sprites/exp-a-02.png" id="1_rxedk"]
+
+[resource]
+script = ExtResource("1_5xbql")
+name = "damage +10"
+hp = 0
+speed = 0.0
+defense = 0.0
+life_steal = 0.0
+attack_speed = 0.0
+critical_chance = 0.0
+critical_multiplier = 0.0
+dodge_chance = 0.0
+hp_regeneration = 0.0
+explosion_damage = 0.0
+explosion_size = 0.0
+pickup_range = 0.0
+damage = 10.0
+icon = ExtResource("1_rxedk")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://c32keats1hoet"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_kboh4"]
+
+[resource]
+script = ExtResource("1_kboh4")
+name = "Boss 3"
+speed = 100
+damage = 30
+health = 15000
+type = 6
+exp = 1000.0
+penetration_resistence = 0
+rebanuce_chance = 10

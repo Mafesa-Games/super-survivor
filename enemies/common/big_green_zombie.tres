@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://q5636004ukrh"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_3nny7"]
+
+[resource]
+script = ExtResource("1_3nny7")
+name = "Big Green Zombie"
+speed = 30
+damage = 15
+health = 500
+type = 1
+exp = 250.0
+penetration_resistence = 100
+rebanuce_chance = 0

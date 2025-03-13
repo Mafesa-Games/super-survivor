@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dipfekg8bmbr2"]
+
+[ext_resource type="Script" uid="uid://b12a5jrb2njbs" path="res://controller/joystick.gd" id="1_v8ct1"]
+[ext_resource type="Texture2D" uid="uid://dyj3j8p31ns5o" path="res://controller/joystick_2.png" id="2_3foeg"]
+[ext_resource type="Script" uid="uid://bbn8q7dbn2ysi" path="res://controller/knob.gd" id="3_83jic"]
+[ext_resource type="Texture2D" uid="uid://dgasqhimub1kr" path="res://controller/joystick_1.png" id="4_bhqxf"]
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_v8ct1")
+
+[node name="Knob" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392)
+scale = Vector2(3, 3)
+texture = ExtResource("2_3foeg")
+script = ExtResource("3_83jic")
+
+[node name="Joyring" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+scale = Vector2(2, 2)
+texture = ExtResource("4_bhqxf")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27ki7pf63foy"]
+
+[ext_resource type="Script" uid="uid://xg6658qoby6p" path="res://menu/inventory/slot.gd" id="1_r2766"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6ffel"]
+
+[node name="slot" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+script = ExtResource("1_r2766")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_6ffel")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="spell_class" load_steps=3 format=3 uid="uid://dqqn82k7sq64c"]
+
+[ext_resource type="Script" uid="uid://d0dto81yhrghc" path="res://spells/spell_class.gd" id="1_dw6uu"]
+[ext_resource type="Texture2D" uid="uid://bdvirfgrc00in" path="res://spells/stage_spells/hp_icon.png" id="1_pwjk7"]
+
+[resource]
+script = ExtResource("1_dw6uu")
+name = "hp+50"
+hp = 50
+speed = 0.0
+defense = 0.0
+life_steal = 0.0
+attack_speed = 0.0
+critical_chance = 0.0
+critical_multiplier = 0.0
+dodge_chance = 0.0
+hp_regeneration = 0.0
+explosion_damage = 0.0
+explosion_size = 0.0
+pickup_range = 0.0
+damage = 0.0
+icon = ExtResource("1_pwjk7")

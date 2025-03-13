@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://cwxg8dhtfccew"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_ns4rh"]
+
+[resource]
+script = ExtResource("1_ns4rh")
+name = "dummy"
+speed = 0
+damage = 0
+health = 999999999999
+type = 6
+exp = 0.0
+penetration_resistence = 10
+rebanuce_chance = 10

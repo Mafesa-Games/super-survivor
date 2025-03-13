@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://q4ue7ggmiqnd"]
+
+[ext_resource type="Script" uid="uid://duonbudta03q5" path="res://menu/nav_bar_script.gd" id="1_1rd33"]
+[ext_resource type="Texture2D" uid="uid://cnjfvowbrff4v" path="res://assets/sprites/ui-a-00.png" id="1_wkose"]
+[ext_resource type="Texture2D" uid="uid://cjira44pjf7kq" path="res://assets/sprites/exp-a-02.png" id="2_gf5wt"]
+[ext_resource type="Texture2D" uid="uid://dypnuna50hsyd" path="res://assets/sprites/exp-a-01.png" id="3_yr0yc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gr16o"]
+
+[node name="nav_bar_scene" type="Control"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rd33")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wkose")
+region_rect = Rect2(8.55776, 0, 110.884, 128)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -34.0
+offset_bottom = 34.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="diamonds_icon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_gf5wt")
+expand_mode = 1
+
+[node name="diamonds_amount" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "5000
+"
+label_settings = SubResource("LabelSettings_gr16o")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="diamonds_icon" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("3_yr0yc")
+expand_mode = 1
+
+[node name="coins_amount" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "5000
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.5
+offset_right = 30.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

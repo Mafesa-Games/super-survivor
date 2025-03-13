@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://cnuta7xkl2kiq"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_mukee"]
+
+[resource]
+script = ExtResource("1_mukee")
+name = "Blue Zombie"
+speed = 40
+damage = 10
+health = 625
+type = 2
+exp = 25.0
+penetration_resistence = 0
+rebanuce_chance = 10

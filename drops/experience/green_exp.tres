@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="experience" load_steps=3 format=3 uid="uid://cuiwnkk1ebq8n"]
+
+[ext_resource type="Script" uid="uid://dwhr7yad01p8n" path="res://drops/experience_class.gd" id="1_gswds"]
+
+[sub_resource type="Resource" id="Resource_h6ddi"]
+metadata/__load_path__ = "res://assets/sprites/exp_green.png"
+
+[resource]
+script = ExtResource("1_gswds")
+exp_amount = 10
+sprit = SubResource("Resource_h6ddi")

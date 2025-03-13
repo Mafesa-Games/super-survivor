@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="weapon_throwable_type" load_steps=3 format=3 uid="uid://df4bbovd4dqpx"]
+
+[ext_resource type="Texture2D" uid="uid://ch0pykcgrjvp5" path="res://weapon_throwable/molotov/molotov_20.png" id="1_m60o6"]
+[ext_resource type="Script" uid="uid://bssism1uxbljn" path="res://weapon_throwable/molotov/molotov_weapon_class.gd" id="2_g3db1"]
+
+[resource]
+script = ExtResource("2_g3db1")
+name = "Molotov"
+damage = 90.0
+atack_rate = 4.0
+atack_area = 35.0
+throwable_speed = 400.0
+throwable_capacity = 3
+reload_speed = 1.0
+icon = ExtResource("1_m60o6")
+text = "motolov +1"

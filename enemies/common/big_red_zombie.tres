@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://bogya1577v2w8"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_7rpk2"]
+
+[resource]
+script = ExtResource("1_7rpk2")
+name = "Big Red Zombie"
+speed = 75
+damage = 20
+health = 1250
+type = 0
+exp = 600.0
+penetration_resistence = 100
+rebanuce_chance = 0

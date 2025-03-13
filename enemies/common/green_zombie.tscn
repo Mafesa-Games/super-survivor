@@ -1,0 +1,181 @@
+[gd_scene load_steps=18 format=3 uid="uid://c7nfapmuu4djb"]
+
+[ext_resource type="Script" uid="uid://b36fak54gxvic" path="res://enemies/enemy_script.gd" id="1_ijlhf"]
+[ext_resource type="Resource" uid="uid://bytihlkniuh3r" path="res://enemies/common/green_zombie.tres" id="2_1xh7w"]
+[ext_resource type="Texture2D" uid="uid://cpb8r644hfyam" path="res://assets/sprites/slime_green.png" id="3_qc5ks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yxf3"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fis3"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6dhw"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d3gt"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rru3d"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3woj"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h73r2"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx202"]
+atlas = ExtResource("3_qc5ks")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvuy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yxf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yxf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fis3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6dhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d3gt")
+}],
+"loop": false,
+"name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rru3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3woj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h73r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx202")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yu217"]
+radius = 7.01783
+
+[sub_resource type="Animation" id="Animation_v83wo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("damage_label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("damage_label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_ycg0s"]
+resource_name = "damage_done"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("damage_label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("damage_label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, -30), Vector2(-5, -31), Vector2(-5, -32), Vector2(-5, -33), Vector2(-5, -34), Vector2(-5, -35), Vector2(-5, -36), Vector2(-5, -37)]
+}
+
+[sub_resource type="Animation" id="Animation_vxc6h"]
+resource_name = "die"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqmah"]
+_data = {
+&"RESET": SubResource("Animation_v83wo"),
+&"damage_done": SubResource("Animation_ycg0s"),
+&"die": SubResource("Animation_vxc6h")
+}
+
+[node name="NormalZombie" type="CharacterBody2D"]
+collision_layer = 320
+collision_mask = 65409
+motion_mode = 1
+platform_floor_layers = 4294967040
+script = ExtResource("1_ijlhf")
+enemy_stats = ExtResource("2_1xh7w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_nvuy5")
+animation = &"die"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_yu217")
+
+[node name="damage_label" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(5, 5)
+offset_left = -5.0
+offset_top = -28.0
+offset_right = 14.0
+offset_bottom = -5.0
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bqmah")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(1, 1.5)

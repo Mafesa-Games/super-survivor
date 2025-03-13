@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7sor0u140udg"]
+
+[ext_resource type="Script" uid="uid://bsh4b2p27lhqv" path="res://weapon_throwable/fire_ball/fire_ball.gd" id="1_x410x"]
+[ext_resource type="Texture2D" uid="uid://c4lepbeql5ii4" path="res://weapon_throwable/fire_ball/fire_ball.png" id="2_c3jmd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vs627"]
+radius = 5.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_poi6d"]
+lifetime_randomness = 0.39
+particle_flag_disable_z = true
+angle_min = -370.7
+angle_max = 377.8
+spread = 65.412
+radial_velocity_min = -514.85
+radial_velocity_max = -59.42
+scale_max = 2.0
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 2.398
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7fey6"]
+lifetime_randomness = 0.88
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = -320.8
+initial_velocity_min = -25.0
+initial_velocity_max = 25.0
+scale_min = 1.6
+scale_max = 1.6
+color = Color(1, 0.539063, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_p0wdc"]
+offsets = PackedFloat32Array(0.289855, 0.731884)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ed5d"]
+gradient = SubResource("Gradient_p0wdc")
+
+[sub_resource type="Curve" id="Curve_p2j6l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.615385), -0.0536519, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vgtpq"]
+curve = SubResource("Curve_p2j6l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jcuvv"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 64.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 9.99998
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_vgtpq")
+color_ramp = SubResource("GradientTexture1D_5ed5d")
+
+[node name="fire_ball" type="Area2D"]
+collision_layer = 0
+collision_mask = 65280
+script = ExtResource("1_x410x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vs627")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_c3jmd")
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.953, 0.335039, 0, 0.978)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_poi6d")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+amount = 4
+amount_ratio = 0.801
+process_material = SubResource("ParticleProcessMaterial_7fey6")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0.398438, 0, 1)
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_jcuvv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

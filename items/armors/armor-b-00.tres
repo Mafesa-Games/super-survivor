@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="item_class" load_steps=3 format=3 uid="uid://ben78i65lb5y1"]
+
+[ext_resource type="Texture2D" uid="uid://b2wj4rsnsmo2r" path="res://assets/armor-b-00.png" id="1_wbvbi"]
+[ext_resource type="Script" uid="uid://dfnhfg4iqpj1v" path="res://items/item_class.gd" id="2_81orn"]
+
+[resource]
+script = ExtResource("2_81orn")
+name = "helmet"
+quality = 5
+type = 1
+hp = 55555
+speed = 33.0
+defense = 33.0
+life_steal = 33.0
+attack_speed = 33.0
+critical_chance = 33.0
+critical_damage = 33.0
+dodge_chance = 33.0
+hp_regeneration = 33.0
+explosion_damage = 33.0
+explosion_size = 33.0
+pickup_range = 33.0
+elemental_fire_damage = 33.0
+elemental_thunder_damage = 33.0
+elemental_water_damage = 33.0
+elemental_rock_damage = 33.0
+elemental_fire_defense = 33.0
+elemental_thunder_defense = 33.0
+elemental_water_defense = 33.0
+elemental_rock_defense = 33.0
+icon = ExtResource("1_wbvbi")

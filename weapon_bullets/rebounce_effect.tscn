@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=3 uid="uid://crqfk8p8d7cjb"]
+
+[ext_resource type="Script" uid="uid://bhjowdkwjwxsu" path="res://weapon_bullets/rebounce_effect.gd" id="1_la4td"]
+[ext_resource type="Texture2D" uid="uid://c82gdxu1xebkv" path="res://weapon_bullets/bullet.png" id="2_qiijj"]
+[ext_resource type="Texture2D" uid="uid://cn8hitwfoe7lf" path="res://weapon_bullets/bullet_light_4.png" id="4_ld8nq"]
+[ext_resource type="Texture2D" uid="uid://41qmicyfrff1" path="res://weapon_bullets/bullet_light_5.png" id="5_owoel"]
+[ext_resource type="Texture2D" uid="uid://cs6hxgdrvg4gj" path="res://weapon_bullets/bullet2.png" id="6_ld8nq"]
+[ext_resource type="Texture2D" uid="uid://bljd6hi8io7gu" path="res://weapon_bullets/bullet_light_6.png" id="6_m0iqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8al4"]
+radius = 0.999975
+height = 4.0
+
+[sub_resource type="Animation" id="Animation_km73p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("impact_light_4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("impact_light_5:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("impact_light_6:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1p47s"]
+resource_name = "impact_light_1"
+length = 0.02
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("impact_light_4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jgc7o"]
+resource_name = "impact_light_2"
+length = 0.02
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("impact_light_5:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ay6hn"]
+resource_name = "impact_light_3"
+length = 0.02
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("impact_light_6:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_n070b"]
+resource_name = "impact_light_4"
+length = 0.02
+step = 0.02
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3h0vj"]
+_data = {
+&"RESET": SubResource("Animation_km73p"),
+&"impact_light_1": SubResource("Animation_1p47s"),
+&"impact_light_2": SubResource("Animation_jgc7o"),
+&"impact_light_3": SubResource("Animation_ay6hn"),
+&"impact_light_4": SubResource("Animation_n070b")
+}
+
+[node name="rebounce_effect" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_la4td")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57027
+shape = SubResource("CapsuleShape2D_u8al4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.15625, 0.104)
+texture = ExtResource("2_qiijj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3h0vj")
+}
+
+[node name="BulletRay" type="Sprite2D" parent="."]
+position = Vector2(-9, 0)
+texture = ExtResource("6_ld8nq")
+
+[node name="impact_light_4" type="Sprite2D" parent="."]
+modulate = Color(0.996094, 0.326843, 0, 0.553)
+texture = ExtResource("4_ld8nq")
+
+[node name="impact_light_5" type="Sprite2D" parent="."]
+modulate = Color(0.996078, 0.32549, 0, 0.552941)
+texture = ExtResource("5_owoel")
+
+[node name="impact_light_6" type="Sprite2D" parent="."]
+texture = ExtResource("6_m0iqv")

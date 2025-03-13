@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjg1exccgqrl2"]
+
+[ext_resource type="Script" uid="uid://c8m4x2dv1h4io" path="res://weapons_fire/sword/sword_bullet.gd" id="1_ex3ox"]
+[ext_resource type="Texture2D" uid="uid://bn0wr47yhk1c0" path="res://weapons_fire/sword/sword-slash1.png" id="2_4q7ii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7okf4"]
+size = Vector2(53.0466, 11.0358)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 65280
+script = ExtResource("1_ex3ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3.57628e-07)
+rotation = 1.57528
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_7okf4")
+
+[node name="sword_slash_1" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.8, 1)
+texture = ExtResource("2_4q7ii")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

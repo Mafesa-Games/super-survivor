@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://rhphi1cdw8j0"]
+
+[ext_resource type="Script" path="res://canvas_modulate.gd" id="1_k317e"]
+[ext_resource type="Texture2D" uid="uid://bfaj1dbgnphq6" path="res://assets/sprites/daynightcycle-gradient-texture.tres" id="2_3nul0"]
+
+[node name="day_night_script" type="CanvasModulate"]
+light_mask = 1023
+visibility_layer = 1023
+script = ExtResource("1_k317e")
+gradient_texture = ExtResource("2_3nul0")

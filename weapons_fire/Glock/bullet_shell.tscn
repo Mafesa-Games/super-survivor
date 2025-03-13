@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceqbywcf78675"]
+
+[ext_resource type="Texture2D" uid="uid://ci1axr76y5e8s" path="res://weapons_fire/Glock/bullet_shell.png" id="1_yioek"]
+[ext_resource type="Script" uid="uid://dadlfs6dtm7dj" path="res://weapons_fire/Glock/bullet_shell.gd" id="2_kbx5x"]
+
+[sub_resource type="Animation" id="Animation_tl5ho"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_73f3m"]
+resource_name = "shell_light_1"
+length = 0.4
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_250hu"]
+_data = {
+&"RESET": SubResource("Animation_tl5ho"),
+&"shell_light_1": SubResource("Animation_73f3m")
+}
+
+[node name="bullet_shell" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yioek")
+script = ExtResource("2_kbx5x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_250hu")
+}

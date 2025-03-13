@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddbaws0avc0ii"]
+
+[ext_resource type="Script" uid="uid://c6l0io4xpp3gy" path="res://weapon_throwable/fire_ball/fire_ball_weapon.gd" id="1_1omdt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1a4o"]
+radius = 221.009
+
+[node name="fire_ball_weapon" type="Area2D"]
+collision_layer = 0
+collision_mask = 65280
+script = ExtResource("1_1omdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c1a4o")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

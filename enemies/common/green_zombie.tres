@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://bytihlkniuh3r"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_ee3ov"]
+
+[resource]
+script = ExtResource("1_ee3ov")
+name = "Green Zombie"
+speed = 30
+damage = 15
+health = 100
+type = 1
+exp = 15.0
+penetration_resistence = 0
+rebanuce_chance = 0

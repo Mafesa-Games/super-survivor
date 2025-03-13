@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="item_class" load_steps=3 format=3 uid="uid://sbivwv7ipdv6"]
+
+[ext_resource type="Texture2D" uid="uid://dsi0diq6vwmij" path="res://assets/armor-b-03.png" id="1_dfaay"]
+[ext_resource type="Script" uid="uid://dfnhfg4iqpj1v" path="res://items/item_class.gd" id="2_s755o"]
+
+[resource]
+script = ExtResource("2_s755o")
+name = "amor-b-03"
+quality = 2
+type = 1
+hp = 22
+speed = 22.0
+defense = 22.0
+life_steal = 22.0
+attack_speed = 22.0
+critical_chance = 22.0
+critical_damage = 22.0
+dodge_chance = 22.0
+hp_regeneration = 22.0
+explosion_damage = 22.0
+explosion_size = 22.0
+pickup_range = 22.0
+elemental_fire_damage = 22.0
+elemental_thunder_damage = 2.0
+elemental_water_damage = 2.0
+elemental_rock_damage = 2.0
+elemental_fire_defense = 2.0
+elemental_thunder_defense = 2.0
+elemental_water_defense = 2.0
+elemental_rock_defense = 2.0
+icon = ExtResource("1_dfaay")

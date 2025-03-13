@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="item_class" load_steps=3 format=3 uid="uid://4q6pmfq60hrc"]
+
+[ext_resource type="Texture2D" uid="uid://depdy2e8roji1" path="res://assets/helmet-a-01.png" id="1_arx1n"]
+[ext_resource type="Script" uid="uid://dfnhfg4iqpj1v" path="res://items/item_class.gd" id="2_5q0y4"]
+
+[resource]
+script = ExtResource("2_5q0y4")
+name = "iron helmet "
+quality = 1
+type = 0
+hp = 5
+speed = 5.0
+defense = 5.0
+life_steal = 5.0
+attack_speed = 5.0
+critical_chance = 5.0
+critical_damage = 5.0
+dodge_chance = 5.0
+hp_regeneration = 5.0
+explosion_damage = 5.0
+explosion_size = 5.0
+pickup_range = 5.0
+elemental_fire_damage = 5.0
+elemental_thunder_damage = 5.0
+elemental_water_damage = 5.0
+elemental_rock_damage = 5.0
+elemental_fire_defense = 5.0
+elemental_thunder_defense = 5.0
+elemental_water_defense = 5.0
+elemental_rock_defense = 5.0
+icon = ExtResource("1_arx1n")

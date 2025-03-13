@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvahanomkqecy"]
+
+[ext_resource type="Script" uid="uid://bk4rybtyrjqbg" path="res://enemies/boss/boss_3/boss_3_projectile.gd" id="1_74o6r"]
+[ext_resource type="Texture2D" uid="uid://c8twwqqilwjui" path="res://enemies/boss/boss_3/boss_3_projectile1.png" id="2_wsejc"]
+[ext_resource type="Texture2D" uid="uid://qtep0omph2r1" path="res://enemies/boss/boss_3/boss_3_projectile2.png" id="3_145ew"]
+[ext_resource type="Texture2D" uid="uid://ds3oev864pkk2" path="res://enemies/boss/boss_3/boss_3_projectile3.png" id="4_2wt65"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyt2r"]
+radius = 4.0
+height = 17.9999
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hnfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wsejc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_145ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2wt65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="boss_projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_74o6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57358
+shape = SubResource("CapsuleShape2D_jyt2r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = SubResource("SpriteFrames_8hnfo")
+autoplay = "default"
+frame_progress = 0.242982
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

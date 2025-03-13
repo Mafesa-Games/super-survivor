@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b22cra3trlbki"]
+
+[ext_resource type="Script" uid="uid://dfwnbbnb8b8i7" path="res://drops/experience_script.gd" id="1_a5587"]
+[ext_resource type="Resource" uid="uid://cuiwnkk1ebq8n" path="res://drops/experience/green_exp.tres" id="2_fagc5"]
+[ext_resource type="Texture2D" uid="uid://dusjhw1cyggha" path="res://drops/exp_b_1.png" id="3_se2k0"]
+[ext_resource type="Texture2D" uid="uid://wttcfc20pvkp" path="res://drops/exp_b_2.png" id="4_2upkp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frn3v"]
+radius = 3.16228
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d162g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_se2k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2upkp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Experience" type="Area2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_a5587")
+exp_resource = ExtResource("2_fagc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_frn3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(0.1875, 0.1875)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_d162g")
+autoplay = "default"
+frame_progress = 0.999384

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccruefce4kl6q"]
+
+[node name="slot_empty" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 120)
+anchors_preset = -1
+anchor_right = 0.167
+anchor_bottom = 0.111
+offset_right = -0.240005
+offset_bottom = 0.119987
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dosni2evg2b4j"]
+
+[ext_resource type="Script" path="res://stage/stage_components/rulete/rulete.gd" id="1_d1im2"]
+
+[node name="Rulete" type="Node2D"]
+script = ExtResource("1_d1im2")

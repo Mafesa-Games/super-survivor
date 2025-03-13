@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="spining_shield_class" load_steps=3 format=3 uid="uid://do2e4uowhr31a"]
+
+[ext_resource type="Texture2D" uid="uid://beewvk1d8tq5c" path="res://weapon_throwable/spining_shield/spining_shield_icon.png" id="1_dn5am"]
+[ext_resource type="Script" uid="uid://sibnl8wo053d" path="res://weapon_throwable/spining_shield/spining_shield_class.gd" id="2_7x84p"]
+
+[resource]
+script = ExtResource("2_7x84p")
+name = "Spining Shield"
+description = ""
+level = 4
+max_level = 5
+damage = 85.0
+num_orbs = 4
+rotation_speed = 2.6
+orbit_radius = 100.0
+critical_chance = 5.0
+critical_damage = 10.0
+icon = ExtResource("1_dn5am")

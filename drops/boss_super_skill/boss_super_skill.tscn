@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://buuyjjic25gb2"]
+
+[ext_resource type="Script" uid="uid://dwhjxpthqoudq" path="res://drops/boss_super_skill/boss_super_skill.gd" id="1_2urt2"]
+[ext_resource type="Texture2D" uid="uid://dd7g2sfawh5qj" path="res://drops/boss_super_skill/chest1.png" id="3_7sb1g"]
+[ext_resource type="Texture2D" uid="uid://2dtvxa6mlpg2" path="res://drops/boss_super_skill/chest2.png" id="4_v77s0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h2c5"]
+radius = 6.08276
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hayq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7sb1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v77s0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BossSuperSkill" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_2urt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2h2c5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3hayq")
+autoplay = "default"
+frame_progress = 0.385679
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

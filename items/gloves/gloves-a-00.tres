@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="item_class" load_steps=3 format=3 uid="uid://dkksaxh6oxdi1"]
+
+[ext_resource type="Texture2D" uid="uid://2ss6xbjub5jw" path="res://assets/gloves-a-00.png" id="1_ah5xn"]
+[ext_resource type="Script" uid="uid://dfnhfg4iqpj1v" path="res://items/item_class.gd" id="2_ajepu"]
+
+[resource]
+script = ExtResource("2_ajepu")
+name = "iron gloves "
+quality = 1
+type = 3
+hp = 1
+speed = 1.0
+defense = 1.0
+life_steal = 1.0
+attack_speed = 1.0
+critical_chance = 1.0
+critical_damage = 1.0
+dodge_chance = 1.0
+hp_regeneration = 1.0
+explosion_damage = 1.0
+explosion_size = 1.0
+pickup_range = 1.0
+elemental_fire_damage = 1.0
+elemental_thunder_damage = 1.0
+elemental_water_damage = 1.0
+elemental_rock_damage = 1.0
+elemental_fire_defense = 1.0
+elemental_thunder_defense = 1.0
+elemental_water_defense = 1.0
+elemental_rock_defense = 1.0
+icon = ExtResource("1_ah5xn")

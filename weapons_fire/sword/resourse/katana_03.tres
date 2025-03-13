@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="weapon_melee_type" load_steps=3 format=3 uid="uid://50e7tuupmpqv"]
+
+[ext_resource type="Texture2D" uid="uid://cxwflol8gswvq" path="res://weapons_fire/sword/sword_icon.png" id="1_r7bq6"]
+[ext_resource type="Script" uid="uid://i56mrw5r1rx7" path="res://weapons_fire/weapon_melee_class.gd" id="2_hyeyq"]
+
+[resource]
+script = ExtResource("2_hyeyq")
+name = "sword"
+damage = 49.0
+atack_rate = 0.55
+reload_speed = 1.0
+bullet_speed = 600.0
+bullet_capacity = 999999
+bullet_max_distance = 600.0
+piercing = false
+icon = ExtResource("1_r7bq6")
+text = "sword"

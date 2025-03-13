@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://clohrgsp0xf2g"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_6uy7b"]
+
+[resource]
+script = ExtResource("1_6uy7b")
+name = "Big Yellow Zombie"
+speed = 50
+damage = 35
+health = 7810
+type = 2
+exp = 1000.0
+penetration_resistence = 0
+rebanuce_chance = 20

@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://8cx4yoeny2lj"]
+
+[ext_resource type="Script" uid="uid://ciwf3hlbpuk6s" path="res://stage/stage_components/base_stage/base_stage.gd" id="1_7ivs3"]
+[ext_resource type="PackedScene" uid="uid://dipfekg8bmbr2" path="res://controller/joystick.tscn" id="2_r1cu2"]
+[ext_resource type="PackedScene" uid="uid://dosni2evg2b4j" path="res://stage/stage_components/rulete/rulete.tscn" id="3_i1nue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1dgl"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aarwa"]
+bg_color = Color(0.578233, 0.643204, 0.13322, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="BaseStage" type="Node2D"]
+script = ExtResource("1_7ivs3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 96.0
+offset_bottom = 28.0
+text = "lvl: 1"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 105.0
+offset_top = 3.0
+offset_right = 383.0
+offset_bottom = 30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s1dgl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aarwa")
+value = 60.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="GameTimer" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 106.0
+offset_top = 32.0
+offset_right = 188.0
+offset_bottom = 55.0
+text = "Start !"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesKilled" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 373.0
+offset_top = 32.0
+offset_right = 420.0
+offset_bottom = 55.0
+text = "killed:"
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesSpawned" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 259.0
+offset_top = 32.0
+offset_right = 329.0
+offset_bottom = 55.0
+text = "enemies:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Joystick" parent="CanvasLayer" instance=ExtResource("2_r1cu2")]
+position = Vector2(45, 275)
+
+[node name="StageTime" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="LevelUpWindow" type="Window" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(350, 400)
+borderless = true
+
+[node name="Enemies" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Experience" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Rulete" parent="." instance=ExtResource("3_i1nue")]
+unique_name_in_owner = true

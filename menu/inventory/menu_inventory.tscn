@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf8cu3i0ledp6"]
+
+[ext_resource type="Script" uid="uid://ffqj41vu5b5n" path="res://menu/inventory/menu_inventory.gd" id="1_ryt77"]
+[ext_resource type="Script" uid="uid://d4l4qu0pm3qea" path="res://menu/inventory/slot_armor.gd" id="2_tt6yf"]
+[ext_resource type="Script" uid="uid://bb0xhjqyw5xei" path="res://menu/inventory/slot_helmet.gd" id="3_0pchl"]
+[ext_resource type="Script" uid="uid://buk75kevyd17r" path="res://menu/inventory/slot_gloves.gd" id="4_a2bmm"]
+[ext_resource type="Script" uid="uid://nhdfqyb1x068" path="res://menu/inventory/slot_boots.gd" id="5_uyjtv"]
+
+[node name="menu_inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryt77")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="menu_equip" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="character_inventory" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_equip"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="player_inventory" type="GridContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="slot_armor" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_tt6yf")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_armor"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_armor"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Armor"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_armor"]
+unique_name_in_owner = true
+
+[node name="slot_helmet" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("3_0pchl")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_helmet"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_helmet"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Helmet"
+
+[node name="slot_gloves" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("4_a2bmm")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_gloves"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_gloves"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Gloves"
+
+[node name="slot_boots" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("5_uyjtv")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_boots"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/menu_equip/character_inventory/MarginContainer/player_inventory/slot_boots"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Boots
+"
+
+[node name="menu_general" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="general_inventory" type="PanelContainer" parent="MarginContainer/VBoxContainer/menu_general"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/menu_general/general_inventory"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="player_inventory" type="GridContainer" parent="MarginContainer/VBoxContainer/menu_general/general_inventory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwgafco31i424"]
+
+[ext_resource type="Script" uid="uid://bbvf3u02uco2k" path="res://player/reload_bar.gd" id="1_8bmnm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgq17"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nvcr"]
+bg_color = Color(0.15372, 0.175173, 0.259719, 1)
+
+[node name="ReloadBar" type="ProgressBar"]
+offset_left = -8.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 9.0
+theme_override_styles/background = SubResource("StyleBoxFlat_cgq17")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7nvcr")
+show_percentage = false
+script = ExtResource("1_8bmnm")

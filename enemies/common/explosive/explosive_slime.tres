@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://d3ls3apsvf0f7"]
+
+[ext_resource type="Script" uid="uid://buywxhet2c1in" path="res://enemies/enemy_class.gd" id="1_yof54"]
+
+[resource]
+script = ExtResource("1_yof54")
+name = "Explosive Slime"
+speed = 100
+damage = 1
+health = 250
+type = 6
+exp = 100.0
+penetration_resistence = 100
+rebanuce_chance = 30
+metadata/_custom_type_script = "uid://buywxhet2c1in"

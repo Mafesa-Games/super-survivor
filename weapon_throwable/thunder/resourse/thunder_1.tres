@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="thunder_class" load_steps=3 format=3 uid="uid://bkr606v36sdt2"]
+
+[ext_resource type="Texture2D" uid="uid://dsci3gnahb6cf" path="res://weapon_throwable/thunder/thunder_icon.png" id="1_mxek2"]
+[ext_resource type="Script" uid="uid://dm4rdkxrxlqyv" path="res://weapon_throwable/thunder/thunder_class.gd" id="2_q8mon"]
+
+[resource]
+script = ExtResource("2_q8mon")
+name = "thunder"
+description = ""
+level = 1
+max_level = 5
+damage = 135.0
+attack_rate = 2.4
+critical_chance = 5.0
+critical_damage = 10.0
+attack_range = 260.0
+icon = ExtResource("1_mxek2")

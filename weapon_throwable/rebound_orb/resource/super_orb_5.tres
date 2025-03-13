@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="weapon_orb_type" load_steps=3 format=3 uid="uid://bfdg4xj4uw5fn"]
+
+[ext_resource type="Texture2D" uid="uid://c6jbfr23dwp5" path="res://weapon_throwable/rebound_orb/orb_icon_super.png" id="1_1jgbb"]
+[ext_resource type="Script" uid="uid://b200cx8126y47" path="res://weapon_throwable/rebound_orb/weapon_orb_class.gd" id="2_bh1e7"]
+
+[resource]
+script = ExtResource("2_bh1e7")
+name = "Orb"
+description = "Weapon description"
+damage = 520.0
+attack_rate = 0.5
+speed = 600.0
+range = 500.0
+max_time = 4
+critical_chance = 12.0
+icon = ExtResource("1_1jgbb")

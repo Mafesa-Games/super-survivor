@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmbw2dn3520rj"]
+
+[ext_resource type="PackedScene" uid="uid://q4ue7ggmiqnd" path="res://menu/nav_bar_scene.tscn" id="3_g1q36"]
+[ext_resource type="PackedScene" uid="uid://cf8cu3i0ledp6" path="res://menu/inventory/menu_inventory.tscn" id="4_gjukv"]
+
+[sub_resource type="Theme" id="Theme_xiin5"]
+Button/font_sizes/font_size = 40
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+
+[node name="menu_main_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xiin5")
+
+[node name="navbar" parent="." instance=ExtResource("3_g1q36")]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.075
+offset_bottom = 24.0
+grow_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -180.0
+offset_right = 118.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Inventary" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Inventory
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[node name="menu_inventory" parent="." instance=ExtResource("4_gjukv")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

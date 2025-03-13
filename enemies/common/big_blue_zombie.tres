@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://b2ryifjf7mei3"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_22xi1"]
+
+[resource]
+script = ExtResource("1_22xi1")
+name = "Big Blue Zombie"
+speed = 50
+damage = 35
+health = 3125
+type = 2
+exp = 1000.0
+penetration_resistence = 0
+rebanuce_chance = 20

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="enemy_type" load_steps=2 format=3 uid="uid://cu4pcuy667cn1"]
+
+[ext_resource type="Script" uid="uid://dqjyoaukgqddk" path="res://enemies/enemy_class.gd" id="1_bcw3w"]
+
+[resource]
+script = ExtResource("1_bcw3w")
+name = "Boss 00"
+speed = 100
+damage = 20
+health = 25000
+type = 6
+exp = 1000
+penetration_resistence = 0
+rebanuce_chance = 0

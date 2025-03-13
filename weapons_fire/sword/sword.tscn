@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://rtbq7x00muew"]
+
+[ext_resource type="Script" uid="uid://bn7bogf3hfxb4" path="res://weapons_fire/sword/sword.gd" id="1_wbwv1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_144l0"]
+radius = 99.0454
+
+[node name="Sword" type="Area2D"]
+collision_layer = 0
+collision_mask = 65280
+script = ExtResource("1_wbwv1")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+shape = SubResource("CircleShape2D_144l0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_shoot_timer_timeout"]
